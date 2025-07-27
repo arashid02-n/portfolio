@@ -236,6 +236,38 @@ header p.lead {
 .contact .form button:hover {
   background: #0056b3;
 }
+/* جعبه کلی شامل 3 info-box */
+.info-container {
+  background: #fff;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  padding: 30px;
+  gap: 20px;
+}
+
+/* هر باکس تکی */
+.contact .info-box {
+  transition: all 0.3s ease;
+  border-radius: 10px;
+  padding: 20px;
+  cursor: pointer;
+}
+
+/* آیکون و متن آبی در حالت hover */
+.contact .info-box:hover {
+  background: #007bff;
+  color: #fff;
+}
+
+.contact .info-box:hover i {
+  color: #fff;
+}
+
+.contact .info-box:hover p,
+.contact .info-box:hover h4 {
+  color: #fff;
+}
+
 #footer {
   background: #007bff;
   color: white;
