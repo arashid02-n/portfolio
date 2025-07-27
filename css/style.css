@@ -176,18 +176,18 @@ header p.lead {
   content: "";
   position: absolute;
   bottom: 0;
-  left: 30%;
-  width: 40%;
+  left: 0;
+  width: 0%;
   height: 3px;
   background: #007bff;
   transition: width 0.3s ease-in-out;
-  opacity: 0;
+  opacity: 1;
 }
 
 .service-box:hover::after {
-  width: 60%;
-  opacity: 1;
+  width: 100%;
 }
+
 .contact .section-title h2 {
   font-weight: bold;
   position: relative;
