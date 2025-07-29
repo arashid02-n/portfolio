@@ -305,6 +305,32 @@ body {
 #services {
   background-color: #f2f2f2; /* یک خاکستری بسیار ملایم */
 }
+#services .service-box {
+  border-radius: 10px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#services .service-box:hover {
+  background-color: #007bff;
+  color: white;
+  transform: translateY(-5px);
+}
+
+#services .service-box:hover i {
+  color: white;
+}
+.info-box:hover {
+  background-color: #007bff;
+  color: white;
+  transition: 0.3s ease;
+}
+
+.info-box:hover i,
+.info-box:hover h4,
+.info-box:hover p {
+  color: white;
+}
+
 
 
 
