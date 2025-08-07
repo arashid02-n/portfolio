@@ -220,25 +220,55 @@
     </div>
 
     <div class="form">
-      <form action="https://formspree.io/f/xkgzrdqe" method="POST" class="php-email-form">
-        <div class="row">
-          <div class="col-md-6 form-group mb-3">
-            <input type="text" name="name" class="form-control" placeholder="Your Name" required>
-          </div>
-          <div class="col-md-6 form-group mb-3">
-            <input type="email" class="form-control" name="email" placeholder="Your Email" required>
-          </div>
-        </div>
-        <div class="form-group mb-3">
-          <input type="text" class="form-control" name="subject" placeholder="Subject" required>
-        </div>
-        <div class="form-group mb-3">
-          <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
-        </div>
-        <div class="text-center">
-          <button type="submit" class="btn btn-primary px-4">Send Message</button>
-        </div>
-      </form>
+      <form id="contact-form" class="php-email-form">
+  <div class="row">
+    <div class="col-md-6 form-group mb-3">
+      <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+    </div>
+    <div class="col-md-6 form-group mb-3">
+      <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+    </div>
+  </div>
+  <div class="form-group mb-3">
+    <input type="text" class="form-control" name="subject" placeholder="Subject" required>
+  </div>
+  <div class="form-group mb-3">
+    <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
+  </div>
+  <div class="text-center">
+    <button type="submit" class="btn btn-primary px-4">Send Message</button>
+  </div>
+</form>
+<script>
+  const form = document.getElementById("contact-form");
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      const response = await fetch("/.netlify/functions/send-message", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        alert("email sent successfully");
+        form.reset();
+      } else {
+        alert("error in email" + result.error);
+      }
+    } catch (error) {
+      alert("something went wrong" + error.message);
+    }
+  });
+</script>
+
     </div>
   </div>
 </section>
