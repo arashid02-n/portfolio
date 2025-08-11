@@ -58,3 +58,26 @@ new Typed('.typed', {
   backDelay: 2000,
   loop: true
 });
+document.addEventListener("DOMContentLoaded", function () {
+  const toggleSwitch = document.getElementById("dark-mode-toggle");
+  const label = document.getElementById("dark-mode-label");
+
+  // بارگذاری وضعیت ذخیره‌شده
+  if (localStorage.getItem("darkMode") === "enabled") {
+    document.body.classList.add("dark-mode");
+    toggleSwitch.checked = true;
+    label.textContent = "Normal";
+  }
+
+  toggleSwitch.addEventListener("change", function () {
+    if (toggleSwitch.checked) {
+      document.body.classList.add("dark-mode");
+      localStorage.setItem("darkMode", "enabled");
+      label.textContent = "Normal";
+    } else {
+      document.body.classList.remove("dark-mode");
+      localStorage.setItem("darkMode", "disabled");
+      label.textContent = "Dark Mode";
+    }
+  });
+});
