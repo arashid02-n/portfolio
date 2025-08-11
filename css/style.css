@@ -330,6 +330,106 @@ body {
 .info-box:hover p {
   color: white;
 }
+/* سوئیچ شبیه Cloudflare */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: #f48120; /* حالت پیش‌فرض نارنجی Cloudflare */
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  right: 3px; /* دایره اول سمت راست */
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+/* وقتی فعال (دارک مود) */
+input:checked + .slider {
+  background-color: #ccc; /* خاکستری برای Normal */
+}
+
+input:checked + .slider:before {
+  transform: translateX(-26px); /* حرکت به سمت چپ */
+}
+
+/* متن کنار سوئیچ */
+.dark-mode-switch span {
+  font-size: 0.9rem;
+  color: white;
+}
+
+/* حالت Dark Mode پس‌زمینه و رنگ متن */
+body.dark-mode {
+  background-color: #121212;
+  color: #fff;
+}
+
+body.dark-mode section:not(#hero),
+body.dark-mode footer,
+body.dark-mode header {
+  background-color: #121212 !important;
+  color: #fff;
+}
+
+body.dark-mode .navbar {
+  background-color: #1f1f1f !important;
+}
+
+body.dark-mode .service-box,
+body.dark-mode .info-box {
+  background-color: #1f1f1f;
+  color: #fff;
+}
+
+body.dark-mode a {
+  color: #bb86fc;
+}
+/* فوتر در حالت دارک مود */
+body.dark-mode footer {
+  background-color: #f48120 !important; /* نارنجی Cloudflare */
+  color: #fff;
+}
+/* برای برند A.Rashid که همیشه رنگ ثابت داشته باشه */
+.navbar-brand {
+  color: #fff !important; /* رنگ ثابت */
+}
+
+.navbar-brand:hover,
+.navbar-brand:focus {
+  color: #fff !important; /* جلوگیری از تغییر رنگ موقع هاور */
+}
+
+/* در حالت دارک مود هم رنگش رو همینطور نگه می‌داریم */
+body.dark-mode .navbar-brand {
+  color: #fff !important;
+}
+
+body.dark-mode .navbar-brand:hover,
+body.dark-mode .navbar-brand:focus {
+  color: #fff !important;
+}
 
 
 
