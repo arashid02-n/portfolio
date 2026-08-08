@@ -1761,7 +1761,10 @@ body.dark-mode .theme-icon-sun {
 
   font-size: 0.8rem;
 }
-
+body.dark-mode .contact-section {
+  background: #111111;
+  color: #ffffff;
+}
 
 /* =========================================================
    FOOTER
