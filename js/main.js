@@ -1,83 +1,385 @@
-// Navbar active section
-document.addEventListener("DOMContentLoaded", function () {
-  const sections = document.querySelectorAll("section");
-  const navLinks = document.querySelectorAll(".nav-link");
+"use strict";
 
-  window.addEventListener("scroll", () => {
-    let current = "";
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 120;
-      if (window.pageYOffset >= sectionTop) {
-        current = section.getAttribute("id");
-      }
-    });
 
-    navLinks.forEach(link => {
-      link.classList.remove("active");
-      if (link.getAttribute("href") === `#${current}`) {
-        link.classList.add("active");
-      }
-    });
-  });
+/* =========================================================
+   DOM READY
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  initTheme();
+  initMobileNavigation();
+  initActiveNavigation();
+  initRevealAnimations();
+  initContactForm();
+
 });
 
-// Email form handler
-const form = document.getElementById("contact-form");
-if (form) {
-  form.addEventListener("submit", async function (e) {
-    e.preventDefault();
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData.entries());
 
-    try {
-      const response = await fetch("/.netlify/functions/send-message", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
+/* =========================================================
+   DARK / LIGHT MODE
+========================================================= */
 
-      const result = await response.json();
+function initTheme() {
 
-      if (result.success) {
-        alert("email sent successfully");
-        form.reset();
-      } else {
-        alert("error in email: " + result.error);
-      }
-    } catch (error) {
-      alert("something went wrong: " + error.message);
-    }
-  });
-}
+  const toggle = document.getElementById("dark-mode-toggle");
 
-// Typed.js initialization
-new Typed('.typed', {
-  strings: ["Designer", "Developer", "Freelancer"],
-  typeSpeed: 100,
-  backSpeed: 50,
-  backDelay: 2000,
-  loop: true
-});
-document.addEventListener("DOMContentLoaded", function () {
-  const toggleSwitch = document.getElementById("dark-mode-toggle");
-  const label = document.getElementById("dark-mode-label");
-
-  // بارگذاری وضعیت ذخیره‌شده
-  if (localStorage.getItem("darkMode") === "enabled") {
-    document.body.classList.add("dark-mode");
-    toggleSwitch.checked = true;
-    label.textContent = "Normal";
+  if (!toggle) {
+    return;
   }
 
-  toggleSwitch.addEventListener("change", function () {
-    if (toggleSwitch.checked) {
-      document.body.classList.add("dark-mode");
-      localStorage.setItem("darkMode", "enabled");
-      label.textContent = "Normal";
-    } else {
-      document.body.classList.remove("dark-mode");
-      localStorage.setItem("darkMode", "disabled");
-      label.textContent = "Dark Mode";
-    }
+  const savedTheme = localStorage.getItem("portfolio-theme");
+
+  if (savedTheme === "dark") {
+    document.body.classList.add("dark-mode");
+    toggle.setAttribute("aria-pressed", "true");
+  } else {
+    document.body.classList.remove("dark-mode");
+    toggle.setAttribute("aria-pressed", "false");
+  }
+
+
+  toggle.addEventListener("click", () => {
+
+    const isDark =
+      document.body.classList.toggle("dark-mode");
+
+    localStorage.setItem(
+      "portfolio-theme",
+      isDark ? "dark" : "light"
+    );
+
+    toggle.setAttribute(
+      "aria-pressed",
+      String(isDark)
+    );
+
   });
-});
+
+}
+
+
+/* =========================================================
+   MOBILE NAVIGATION
+========================================================= */
+
+function initMobileNavigation() {
+
+  const toggle =
+    document.getElementById("mobile-menu-toggle");
+
+  const navigation =
+    document.getElementById("mobile-navigation");
+
+  if (!toggle || !navigation) {
+    return;
+  }
+
+
+  toggle.addEventListener("click", () => {
+
+    const isOpen =
+      navigation.classList.toggle("open");
+
+    toggle.setAttribute(
+      "aria-expanded",
+      String(isOpen)
+    );
+
+    toggle.setAttribute(
+      "aria-label",
+      isOpen
+        ? "Close navigation menu"
+        : "Open navigation menu"
+    );
+
+  });
+
+
+  const links =
+    navigation.querySelectorAll(".mobile-nav-link");
+
+  links.forEach((link) => {
+
+    link.addEventListener("click", () => {
+
+      navigation.classList.remove("open");
+
+      toggle.setAttribute(
+        "aria-expanded",
+        "false"
+      );
+
+      toggle.setAttribute(
+        "aria-label",
+        "Open navigation menu"
+      );
+
+    });
+
+  });
+
+}
+
+
+/* =========================================================
+   ACTIVE NAVIGATION
+========================================================= */
+
+function initActiveNavigation() {
+
+  const sections =
+    document.querySelectorAll("main section[id]");
+
+  const navLinks =
+    document.querySelectorAll(
+      ".desktop-navigation .nav-link"
+    );
+
+  if (!sections.length || !navLinks.length) {
+    return;
+  }
+
+
+  const updateActiveLink = () => {
+
+    const scrollPosition =
+      window.scrollY + 180;
+
+    let currentSection = "hero";
+
+
+    sections.forEach((section) => {
+
+      const sectionTop =
+        section.offsetTop;
+
+      if (scrollPosition >= sectionTop) {
+        currentSection =
+          section.getAttribute("id");
+      }
+
+    });
+
+
+    navLinks.forEach((link) => {
+
+      const target =
+        link.getAttribute("href");
+
+      link.classList.toggle(
+        "active",
+        target === `#${currentSection}`
+      );
+
+    });
+
+  };
+
+
+  updateActiveLink();
+
+  window.addEventListener(
+    "scroll",
+    updateActiveLink,
+    { passive: true }
+  );
+
+}
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+function initRevealAnimations() {
+
+  const elements =
+    document.querySelectorAll(".reveal");
+
+  if (!elements.length) {
+    return;
+  }
+
+
+  if (
+    window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches
+  ) {
+
+    elements.forEach((element) => {
+      element.classList.add("is-visible");
+    });
+
+    return;
+  }
+
+
+  const observer =
+    new IntersectionObserver(
+      (entries, observerInstance) => {
+
+        entries.forEach((entry) => {
+
+          if (!entry.isIntersecting) {
+            return;
+          }
+
+          entry.target.classList.add(
+            "is-visible"
+          );
+
+          observerInstance.unobserve(
+            entry.target
+          );
+
+        });
+
+      },
+      {
+        threshold: 0.12,
+        rootMargin: "0px 0px -40px 0px"
+      }
+    );
+
+
+  elements.forEach((element) => {
+    observer.observe(element);
+  });
+
+}
+
+
+/* =========================================================
+   CONTACT FORM
+========================================================= */
+
+function initContactForm() {
+
+  const form =
+    document.getElementById("contact-form");
+
+  const status =
+    document.getElementById("form-status");
+
+  if (!form) {
+    return;
+  }
+
+
+  form.addEventListener(
+    "submit",
+    async (event) => {
+
+      event.preventDefault();
+
+
+      if (status) {
+        status.textContent =
+          "Sending message...";
+      }
+
+
+      const submitButton =
+        form.querySelector(
+          'button[type="submit"]'
+        );
+
+      const originalButtonContent =
+        submitButton
+          ? submitButton.innerHTML
+          : "";
+
+
+      if (submitButton) {
+
+        submitButton.disabled = true;
+
+        submitButton.innerHTML =
+          `
+            <span>Sending...</span>
+            <i class="bi bi-arrow-repeat"></i>
+          `;
+
+      }
+
+
+      const formData =
+        new FormData(form);
+
+      const data =
+        Object.fromEntries(
+          formData.entries()
+        );
+
+
+      try {
+
+        const response =
+          await fetch(
+            "/.netlify/functions/send-message",
+            {
+              method: "POST",
+
+              headers: {
+                "Content-Type":
+                  "application/json"
+              },
+
+              body: JSON.stringify(data)
+            }
+          );
+
+
+        const result =
+          await response.json();
+
+
+        if (!response.ok || !result.success) {
+
+          throw new Error(
+            result.error ||
+            "Unable to send the message."
+          );
+
+        }
+
+
+        form.reset();
+
+        if (status) {
+
+          status.textContent =
+            "Email sent successfully.";
+
+        }
+
+
+      } catch (error) {
+
+        if (status) {
+
+          status.textContent =
+            error.message ||
+            "Something went wrong.";
+
+        }
+
+      } finally {
+
+        if (submitButton) {
+
+          submitButton.disabled = false;
+
+          submitButton.innerHTML =
+            originalButtonContent;
+
+        }
+
+      }
+
+    }
+  );
+
+}
