@@ -3,269 +3,877 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Rashid Nazari Resume</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <meta
+    name="description"
+    content="Rashid Nazari personal portfolio and resume."
+  />
+
+  <link rel="canonical" href="https://rashidnazari.com/" />
+
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="images/RN(1).ico"
+  />
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  />
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  />
+
   <link rel="stylesheet" href="css/style.css" />
-  <link rel="icon" type="image/svg+xml" href="images/RN(1).ico">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-<!-- Header with Navbar -->
-<header>
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-    <div class="container">
-      <a class="navbar-brand d-flex align-items-center" href="#">
-        A.Rashid
-        <div class="dark-mode-switch ms-3 d-flex align-items-center">
-          <label class="switch mb-0">
-           <input type="checkbox" id="dark-mode-toggle">
-           <span class="slider"></span>
-          </label>
-          <span id="dark-mode-label" class="ms-2">Dark Mode</span>
-         </div>
-       </a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-        data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-        aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-</header>
-<!-- Hero Section -->
-<section id="hero" class="hero route bg-image" style="background-image: url('assets/img/hero-bg.jpg'); height: 100vh;">
-  <div class="overlay-it"></div>
-  <div class="hero-content display-table">
-    <div class="table-cell">
-      <div class="container text-center text-white">
-        <h1 class="hero-title mb-4">I am A.Rashid Nazari</h1>
-        <p class="hero-subtitle">
-          <span class="typed" data-typed-items="Designer, Developer, Freelancer"></span>
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
+  <!-- =========================
+       Navigation
+  ========================== -->
+  <header class="site-header">
+    <nav class="navbar" aria-label="Main navigation">
 
-<!-- About -->
-<section id="about" class="about py-5">
-  <div class="container">
-    <div class="row">
+      <div class="nav-container">
 
-      <!-- ستون سمت چپ: عکس، اطلاعات و مهارت‌ها -->
-      <div class="col-md-6">
-        <div class="d-flex mb-4">
-          <div class="me-3">
-            <img src="images/profile.png" alt="Profile" class="img-fluid rounded" style="max-width: 150px;" />
+        <a class="navbar-brand" href="#hero" aria-label="A.Rashid home">
+          <span class="brand-mark">AR</span>
+          <span class="brand-name">A.Rashid</span>
+        </a>
+
+        <div class="nav-right">
+
+          <div class="desktop-navigation">
+            <a class="nav-link" href="#about">About</a>
+            <a class="nav-link" href="#projects">Projects</a>
+            <a class="nav-link" href="#resume">Experience</a>
+            <a class="nav-link" href="#services">Services</a>
+            <a class="nav-link" href="#contact">Contact</a>
           </div>
+
+          <button
+            class="theme-toggle"
+            id="dark-mode-toggle"
+            type="button"
+            aria-label="Toggle dark mode"
+            aria-pressed="false"
+          >
+            <i class="bi bi-moon-stars theme-icon theme-icon-moon"></i>
+            <i class="bi bi-sun theme-icon theme-icon-sun"></i>
+          </button>
+
+          <button
+            class="mobile-menu-toggle"
+            id="mobile-menu-toggle"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="mobile-navigation"
+          >
+            <span></span>
+            <span></span>
+          </button>
+
+        </div>
+
+      </div>
+
+      <div class="mobile-navigation" id="mobile-navigation">
+        <a class="mobile-nav-link" href="#about">About</a>
+        <a class="mobile-nav-link" href="#projects">Projects</a>
+        <a class="mobile-nav-link" href="#resume">Experience</a>
+        <a class="mobile-nav-link" href="#services">Services</a>
+        <a class="mobile-nav-link" href="#contact">Contact</a>
+      </div>
+
+    </nav>
+  </header>
+
+
+  <main>
+
+    <!-- =========================
+         Hero
+    ========================== -->
+    <section id="hero" class="hero">
+
+      <div class="hero-grid"></div>
+      <div class="hero-glow hero-glow-one"></div>
+      <div class="hero-glow hero-glow-two"></div>
+
+      <div class="hero-content container">
+
+        <div class="hero-copy reveal">
+
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            Personal Portfolio
+          </div>
+
+          <h1>
+            I am
+            <span>A.Rashid Nazari</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            <span class="hero-line"></span>
+            <span class="typed">Developer</span>
+          </p>
+
+          <div class="hero-actions">
+            <a href="#projects" class="primary-button">
+              View Projects
+              <i class="bi bi-arrow-up-right"></i>
+            </a>
+
+            <a href="#contact" class="secondary-button">
+              Get in touch
+            </a>
+          </div>
+
+        </div>
+
+        <div class="hero-side reveal">
+
+          <div class="hero-code-card">
+            <div class="code-window-top">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+
+            <div class="code-content">
+              <div><span class="code-purple">const</span> developer = {</div>
+              <div class="code-indent">
+                name:
+                <span class="code-green">'Rashid Nazari'</span>,
+              </div>
+              <div class="code-indent">
+                focus:
+                <span class="code-green">'Software'</span>,
+              </div>
+              <div class="code-indent">
+                status:
+                <span class="code-green">'building'</span>
+              </div>
+              <div>};</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <a href="#about" class="scroll-indicator" aria-label="Scroll to About">
+        <span>Scroll</span>
+        <i class="bi bi-arrow-down"></i>
+      </a>
+
+    </section>
+
+
+    <!-- =========================
+         About
+    ========================== -->
+    <section id="about" class="section about-section">
+
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <span class="section-number">01</span>
+
           <div>
-            <ul class="list-unstyled">
-              <li><strong>Name:</strong> A.Rashid Nazari</li>
-              <li><strong>Profile:</strong> Full stack developer</li>
-              <li><strong>Email:</strong> rashidnzri@gmail.com</li>
-              <li><strong>Phone:</strong> (98) 902-424-3010</li>
-            </ul>
+            <span class="section-kicker">About</span>
+            <h2>About me</h2>
           </div>
         </div>
 
-        <h3>Skills</h3>
-        <div class="mb-3">
-          <div class="d-flex justify-content-between">
-            <span>HTML</span><span>100%</span>
+
+        <div class="about-layout">
+
+          <div class="about-profile reveal">
+
+            <div class="profile-card">
+
+              <div class="profile-image-wrap">
+                <img
+                  src="images/profile.png"
+                  alt="Profile"
+                  class="profile-image"
+                />
+              </div>
+
+              <div class="profile-details">
+
+                <div class="profile-detail">
+                  <span>Name</span>
+                  <strong>A.Rashid Nazari</strong>
+                </div>
+
+                <div class="profile-detail">
+                  <span>Profile</span>
+                  <strong>Full stack developer</strong>
+                </div>
+
+                <div class="profile-detail">
+                  <span>Email</span>
+                  <a href="mailto:rashidnzri@gmail.com">
+                    rashidnzri@gmail.com
+                  </a>
+                </div>
+
+                <div class="profile-detail">
+                  <span>Phone</span>
+                  <a href="tel:+989024243010">
+                    (98) 902-424-3010
+                  </a>
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <div class="skills-card">
+
+              <div class="card-label">
+                <span>Skills</span>
+                <i class="bi bi-code-slash"></i>
+              </div>
+
+              <div class="skills-grid">
+
+                <span class="skill-pill">HTML</span>
+                <span class="skill-pill">C++</span>
+                <span class="skill-pill">CSS</span>
+                <span class="skill-pill">Python</span>
+                <span class="skill-pill">JavaScript</span>
+
+              </div>
+
+            </div>
+
           </div>
-          <div class="progress">
-            <div class="progress-bar bg-primary" role="progressbar" style="width: 100%"></div>
+
+
+          <div class="about-copy reveal">
+
+            <span class="mini-label">A little about me</span>
+
+            <p class="large-copy">
+              I began by learning several programming languages that I was introduced to at university, such as C, C++, Java, and Python.
+            </p>
+
+            <p>
+              Then, I became interested in web development and started learning front-end technologies, followed by back-end development
+            </p>
+
+            <p>
+              Currently, I’m expanding my skills in app development, Photoshop, and artificial intelligence.
+            </p>
+
+            <div class="about-decoration">
+              <span>01</span>
+              <span></span>
+              <span>05</span>
+            </div>
+
           </div>
+
         </div>
-        <div class="mb-3">
-          <div class="d-flex justify-content-between">
-            <span>C++</span><span>100%</span>
-          </div>
-          <div class="progress">
-            <div class="progress-bar bg-primary" role="progressbar" style="width: 100%"></div>
-          </div>
-        </div>
-        <div class="mb-3">
-          <div class="d-flex justify-content-between">
-            <span>CSS</span><span>80%</span>
-          </div>
-          <div class="progress">
-            <div class="progress-bar bg-primary" role="progressbar" style="width: 80%"></div>
-          </div>
-        </div>
-        <div class="mb-3">
-          <div class="d-flex justify-content-between">
-            <span>Python</span><span>80%</span>
-          </div>
-          <div class="progress">
-            <div class="progress-bar bg-primary" role="progressbar" style="width: 80%"></div>
-          </div>
-        </div>
-        <div class="mb-3">
-          <div class="d-flex justify-content-between">
-            <span>JavaScript</span><span>60%</span>
-          </div>
-          <div class="progress">
-            <div class="progress-bar bg-primary" role="progressbar" style="width: 60%"></div>
-          </div>
-        </div>
+
       </div>
 
-      <!-- ستون سمت راست: درباره من -->
-      <div class="col-md-6">
-        <h2 class="mb-3 position-relative">About me</h2>
-        <p>I began by learning several programming languages that I was introduced to at university, such as C, C++, Java, and Python.</p>
-        <p>Then, I became interested in web development and started learning front-end technologies, followed by back-end development</p>
-        <p>Currently, I’m expanding my skills in app development, Photoshop, and artificial intelligence.</p>
-      </div>
+    </section>
 
-    </div>
-  </div>
-</section>
 
-<!-- Resume Section -->
-<section id="resume" class="py-5">
-  <div class="container">
-    <div class="text-center mb-5">
-      <h2 class="position-relative d-inline-block">Resume</h2>
-    </div>
-    <div class="row">
-      <!-- Education -->
-      <div class="col-md-6">
-        <h3 class="mb-4">Education</h3>
-        <div class="timeline position-relative ps-4">
-          <div class="resume-item position-relative mb-5">
-            <span class="resume-dot"></span>
-            <h4>Bachelor of Science in Computer Science</h4>
-            <h5>2022 - 2026</h5>
-            <p><em>University of Ferdowsi</em></p>
-            <p>During my studies, I gained proficiency in programming, several programming languages, data structures, algorithm design, and some pure mathematics</p>
+    <!-- =========================
+         Projects
+    ========================== -->
+    <section id="projects" class="section projects-section">
+
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <span class="section-number">02</span>
+
+          <div>
+            <span class="section-kicker">Selected Work</span>
+            <h2>Projects</h2>
           </div>
+
         </div>
+
+
+        <div class="projects-intro reveal">
+
+          <p>
+            A collection of projects and work that I have built.
+          </p>
+
+          <span class="project-count">
+            01 Project
+          </span>
+
+        </div>
+
+
+        <!--
+          PROJECT GRID
+
+          فقط یک Card فعلاً وجود دارد.
+          برای پروژه‌های بعدی همین project-card را duplicate کن.
+        -->
+
+        <div class="projects-grid">
+
+          <!-- PROJECT CARD 01 -->
+          <article class="project-card reveal">
+
+            <div class="project-card-top">
+
+              <div class="project-number">
+                01
+              </div>
+
+              <div class="project-card-actions">
+
+                <a
+                  href="#"
+                  class="project-icon-link"
+                  aria-label="Project repository"
+                  title="Repository"
+                >
+                  <i class="bi bi-github"></i>
+                </a>
+
+                <a
+                  href="#"
+                  class="project-icon-link"
+                  aria-label="Project live demo"
+                  title="Live demo"
+                >
+                  <i class="bi bi-arrow-up-right"></i>
+                </a>
+
+              </div>
+
+            </div>
+
+
+            <div class="project-visual">
+
+              <div class="project-grid-pattern"></div>
+
+              <div class="project-visual-content">
+
+                <span class="project-visual-label">
+                  PROJECT
+                </span>
+
+                <span class="project-visual-number">
+                  01
+                </span>
+
+              </div>
+
+            </div>
+
+
+            <div class="project-card-content">
+
+              <!--
+                محتوای پروژه فعلی خودت را اینجا قرار بده.
+                من اطلاعات پروژه را از خودم اختراع نکرده‌ام.
+              -->
+
+              <div class="project-meta">
+                <span>Project 01</span>
+                <span>2026</span>
+              </div>
+
+              <h3>Your First Project</h3>
+
+              <p>
+                Add your existing project description here.
+              </p>
+
+              <div class="project-tags">
+
+                <span>Project</span>
+                <span>Development</span>
+
+              </div>
+
+              <a href="#" class="project-view-link">
+                View project
+                <i class="bi bi-arrow-right"></i>
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <!--
+            FUTURE PROJECTS
+
+            Cardهای بعدی را دقیقاً در همین projects-grid
+            اضافه کن.
+          -->
+
+        </div>
+
       </div>
-      <!-- Experience -->
-      <div class="col-md-6">
-        <h3 class="mb-4">Experience</h3>
-        <div class="timeline position-relative ps-4">
-          <div class="resume-item position-relative mb-5">
-            <span class="resume-dot"></span>
-            <h4>Senior Web Developer</h4>
-            <h5>2023 - Present</h5>
-            <p><em>nazari ecom solutions</em></p>
-            <p></p>
+
+    </section>
+
+
+    <!-- =========================
+         Resume
+    ========================== -->
+    <section id="resume" class="section resume-section">
+
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <span class="section-number">03</span>
+
+          <div>
+            <span class="section-kicker">Background</span>
+            <h2>Resume</h2>
           </div>
+
         </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- Services -->
-<section id="services" class="py-5">
-  <div class="container">
-    <div class="text-center mb-5">
-      <h2 class="position-relative d-inline-block">Services</h2>
-    </div>
-    <div class="d-flex justify-content-between flex-wrap">
-      <div class="service-box text-center p-4 shadow-sm" style="width: 45%;">
-        <div class="icon mb-3">
-          <i class="bi bi-code-slash"></i>
-        </div>
-        <h4 class="mb-2">Web Develop</h4>
-        <p>
-          I build responsive and high-performance websites using modern technologies. Whether it's front-end development with HTML, CSS, JavaScript, and React, or back-end logic with Node.js, I ensure that every site is functional, fast, and optimized for all devices.
-        </p>
-      </div>
 
-      <div class="service-box text-center p-4 shadow-sm" style="width: 45%;">
-        <div class="icon mb-3">
-          <i class="bi bi-phone"></i>
-        </div>
-        <h4 class="mb-2">App Develop</h4>
-        <p>
-           I develop cross-platform mobile applications with smooth performance and modern UI. Using tools like Flutter, React Native, and Android Studio, I create apps that work seamlessly on both Android and iOS, tailored to your goals and your users' needs.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
+        <div class="resume-grid">
 
-<!-- Contact -->
-<section id="contact" class="contact section-bg py-5">
-  <div class="container">
-    <div class="section-title text-center mb-5">
-      <h2>Contact</h2>
-      <p>If you're interested in any of the services or have a specific project in mind, feel free to get in touch through the contact form, email, or social media. I'm always open to new collaborations</p>
-    </div>
+          <!-- Education -->
+          <div class="resume-column reveal">
 
-    <div class="info-container d-flex justify-content-between flex-wrap mb-5 gap-3">
-      <a href="https://www.google.com/maps/place/Ferdowsi+University+of+Mashhad" target="_blank" class="info-box text-center flex-fill text-decoration-none text-dark">
-        <i class="bi bi-geo-alt"></i>
-        <h4>Address</h4>
-        <p>FUM University,<br>Mashhad, Khorasan</p>
-      </a>
-      <a href="tel:+989024243010" class="info-box text-center flex-fill text-decoration-none text-dark">
-        <i class="bi bi-telephone"></i>
-        <h4>Call</h4>
-        <p>+98 902 424 3010</p>
-      </a>
-      <a href="mailto:rashidnzri@gmail.com" class="info-box text-center flex-fill text-decoration-none text-dark">
-        <i class="bi bi-envelope"></i>
-        <h4>Email</h4>
-        <p>rashidnzri@gmail.com</p>
-      </a>
-    </div>
+            <div class="resume-column-title">
+              <i class="bi bi-mortarboard"></i>
+              <span>Education</span>
+            </div>
 
-    <div class="form">
-      <form id="contact-form" class="php-email-form">
-        <div class="row">
-          <div class="col-md-6 form-group mb-3">
-            <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+            <div class="timeline">
+
+              <article class="timeline-item">
+
+                <span class="timeline-marker"></span>
+
+                <div class="timeline-date">
+                  2022 - 2026
+                </div>
+
+                <h3>
+                  Bachelor of Science in Computer Science
+                </h3>
+
+                <p class="timeline-place">
+                  University of Ferdowsi
+                </p>
+
+                <p>
+                  During my studies, I gained proficiency in programming, several programming languages, data structures, algorithm design, and some pure mathematics
+                </p>
+
+              </article>
+
+            </div>
+
           </div>
-          <div class="col-md-6 form-group mb-3">
-            <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+
+
+          <!-- Experience -->
+          <div class="resume-column reveal">
+
+            <div class="resume-column-title">
+              <i class="bi bi-briefcase"></i>
+              <span>Experience</span>
+            </div>
+
+            <div class="timeline">
+
+              <article class="timeline-item">
+
+                <span class="timeline-marker"></span>
+
+                <div class="timeline-date">
+                  2023 - Present
+                </div>
+
+                <h3>
+                  Senior Web Developer
+                </h3>
+
+                <p class="timeline-place">
+                  nazari ecom solutions
+                </p>
+
+                <p></p>
+
+              </article>
+
+            </div>
+
           </div>
-        </div>
-        <div class="form-group mb-3">
-          <input type="text" class="form-control" name="subject" placeholder="Subject" required>
-        </div>
-        <div class="form-group mb-3">
-          <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
-        </div>
-        <div class="text-center">
-          <button type="submit" class="btn btn-primary px-4">Send Message</button>
-        </div>
-      </form>
-    </div>
-  </div>
-</section>
 
-<!-- ======= Footer ======= -->
-<footer id="footer" class="bg-primary text-white text-center py-4">
-  <div class="container">
-    <p class="mb-2">&copy; Copyright <strong>A.Rashid</strong> All Rights Reserved</p>
-    <div class="social-links d-flex justify-content-center">
-      <a href="https://github.com/arashid02-n" class="mx-2" target="_blank"><i class="bi bi-github"></i></a>
-      <a href="https://linkedin.com/in/rashid-n4" class="mx-2" target="_blank"><i class="bi bi-linkedin"></i></a>
-      <a href="https://instagram.com/rashidnzr" class="mx-2" target="_blank"><i class="bi bi-instagram"></i></a>
-      <a href="https://x.com" class="mx-2" target="_blank"><i class="bi bi-twitter-x"></i></a>
-    </div>
-  </div>
-</footer>
-<!-- End Footer -->
+        </div>
 
-<!-- Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-<script src="js/main.js"></script>
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         Services
+    ========================== -->
+    <section id="services" class="section services-section">
+
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <span class="section-number">04</span>
+
+          <div>
+            <span class="section-kicker">Capabilities</span>
+            <h2>Services</h2>
+          </div>
+
+        </div>
+
+
+        <div class="services-grid">
+
+          <article class="service-box reveal">
+
+            <div class="service-top">
+
+              <div class="service-icon">
+                <i class="bi bi-code-slash"></i>
+              </div>
+
+              <span class="service-number">01</span>
+
+            </div>
+
+            <div class="service-content">
+
+              <h3>Web Develop</h3>
+
+              <p>
+                I build responsive and high-performance websites using modern technologies. Whether it's front-end development with HTML, CSS, JavaScript, and React, or back-end logic with Node.js, I ensure that every site is functional, fast, and optimized for all devices.
+              </p>
+
+            </div>
+
+            <div class="service-line"></div>
+
+          </article>
+
+
+          <article class="service-box reveal">
+
+            <div class="service-top">
+
+              <div class="service-icon">
+                <i class="bi bi-phone"></i>
+              </div>
+
+              <span class="service-number">02</span>
+
+            </div>
+
+            <div class="service-content">
+
+              <h3>App Develop</h3>
+
+              <p>
+                I develop cross-platform mobile applications with smooth performance and modern UI. Using tools like Flutter, React Native, and Android Studio, I create apps that work seamlessly on both Android and iOS, tailored to your goals and your users' needs.
+              </p>
+
+            </div>
+
+            <div class="service-line"></div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         Contact
+    ========================== -->
+    <section id="contact" class="section contact-section">
+
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <span class="section-number">05</span>
+
+          <div>
+            <span class="section-kicker">Contact</span>
+            <h2>Get in touch</h2>
+          </div>
+
+        </div>
+
+
+        <div class="contact-layout">
+
+          <div class="contact-intro reveal">
+
+            <p class="contact-lead">
+              If you're interested in any of the services or have a specific project in mind, feel free to get in touch through the contact form, email, or social media. I'm always open to new collaborations
+            </p>
+
+
+            <div class="contact-info-list">
+
+              <a
+                href="https://www.google.com/maps/place/Ferdowsi+University+of+Mashhad"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-info-item"
+              >
+                <span class="contact-icon">
+                  <i class="bi bi-geo-alt"></i>
+                </span>
+
+                <span>
+                  <small>Address</small>
+                  <strong>
+                    FUM University,<br />
+                    Mashhad, Khorasan
+                  </strong>
+                </span>
+              </a>
+
+
+              <a
+                href="tel:+989024243010"
+                class="contact-info-item"
+              >
+                <span class="contact-icon">
+                  <i class="bi bi-telephone"></i>
+                </span>
+
+                <span>
+                  <small>Call</small>
+                  <strong>+98 902 424 3010</strong>
+                </span>
+              </a>
+
+
+              <a
+                href="mailto:rashidnzri@gmail.com"
+                class="contact-info-item"
+              >
+                <span class="contact-icon">
+                  <i class="bi bi-envelope"></i>
+                </span>
+
+                <span>
+                  <small>Email</small>
+                  <strong>rashidnzri@gmail.com</strong>
+                </span>
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <div class="contact-form-wrapper reveal">
+
+            <form id="contact-form" class="contact-form">
+
+              <div class="form-row">
+
+                <div class="form-field">
+
+                  <label for="name">
+                    Your Name
+                  </label>
+
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Your Name"
+                    required
+                  />
+
+                </div>
+
+
+                <div class="form-field">
+
+                  <label for="email">
+                    Your Email
+                  </label>
+
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Your Email"
+                    required
+                  />
+
+                </div>
+
+              </div>
+
+
+              <div class="form-field">
+
+                <label for="subject">
+                  Subject
+                </label>
+
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  placeholder="Subject"
+                  required
+                />
+
+              </div>
+
+
+              <div class="form-field">
+
+                <label for="message">
+                  Message
+                </label>
+
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="6"
+                  placeholder="Message"
+                  required
+                ></textarea>
+
+              </div>
+
+
+              <button type="submit" class="primary-button submit-button">
+
+                <span>Send Message</span>
+
+                <i class="bi bi-arrow-up-right"></i>
+
+              </button>
+
+              <p
+                id="form-status"
+                class="form-status"
+                role="status"
+                aria-live="polite"
+              ></p>
+
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       Footer
+  ========================== -->
+  <footer id="footer" class="site-footer">
+
+    <div class="container footer-inner">
+
+      <p>
+        &copy; Copyright
+        <strong>A.Rashid</strong>
+        All Rights Reserved
+      </p>
+
+      <div class="social-links">
+
+        <a
+          href="https://github.com/arashid02-n"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub"
+        >
+          <i class="bi bi-github"></i>
+        </a>
+
+        <a
+          href="https://linkedin.com/in/rashid-n4"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn"
+        >
+          <i class="bi bi-linkedin"></i>
+        </a>
+
+        <a
+          href="https://instagram.com/rashidnzr"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
+        >
+          <i class="bi bi-instagram"></i>
+        </a>
+
+        <a
+          href="https://x.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="X"
+        >
+          <i class="bi bi-twitter-x"></i>
+        </a>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <script src="js/main.js"></script>
+
 </body>
 </html>
