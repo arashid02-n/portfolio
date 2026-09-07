@@ -824,7 +824,7 @@ body.dark-mode .theme-icon-sun {
 
 .profile-image {
   width: 100%;
-  aspect-ratio: 1 / 0.85;
+  aspect-ratio: 1 / 1;
 
   object-fit: cover;
 
@@ -1054,6 +1054,10 @@ body.dark-mode .theme-icon-sun {
   border-color: var(--border-strong);
 
   box-shadow: var(--shadow-lg);
+}
+
+.project-card--featured {
+  grid-column: 1 / -1;
 }
 
 .project-card-top {
