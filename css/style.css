@@ -1428,6 +1428,20 @@ body.dark-mode .theme-icon-sun {
   font-size: 0.9rem;
 }
 
+.timeline-list {
+  margin: 0;
+  padding-left: 18px;
+
+  color: var(--text-secondary);
+
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.timeline-list li + li {
+  margin-top: 6px;
+}
+
 
 /* =========================================================
    SERVICES
