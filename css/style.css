@@ -2128,3 +2128,116 @@ body.dark-mode .contact-section {
   }
 
 }
+
+
+/* =========================================================
+   POLISH: tighter cards and better small-screen layout
+========================================================= */
+
+.hero {
+  min-height: 100svh;
+}
+
+.project-visual {
+  min-height: 240px;
+}
+
+.project-visual-number {
+  font-size: clamp(5rem, 10vw, 8rem);
+}
+
+.project-card-content h3 {
+  line-height: 1.12;
+}
+
+.service-box {
+  min-height: 0;
+}
+
+.service-content {
+  margin-top: 0;
+  padding-top: 36px;
+}
+
+.service-content h3 {
+  font-size: 1.6rem;
+  line-height: 1.15;
+}
+
+.timeline-item h3 {
+  line-height: 1.25;
+}
+
+@media (max-width: 850px) {
+
+  .section {
+    padding: 96px 0;
+  }
+
+  .projects-grid,
+  .services-grid {
+    gap: 18px;
+  }
+
+}
+
+@media (max-width: 700px) {
+
+  .hero {
+    min-height: auto;
+
+    padding: 140px 0 90px;
+  }
+
+  .section {
+    padding: 80px 0;
+  }
+
+  .project-visual {
+    min-height: 170px;
+  }
+
+  .project-visual-number {
+    font-size: 5.5rem;
+  }
+
+  .project-card-content h3 {
+    font-size: 1.45rem;
+  }
+
+  .service-box {
+    min-height: 0;
+
+    padding: 24px;
+  }
+
+  .service-content {
+    padding-top: 24px;
+  }
+
+  .service-content h3 {
+    font-size: 1.4rem;
+  }
+
+  .hero-actions a {
+    width: 100%;
+    justify-content: center;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .project-visual {
+    min-height: 150px;
+  }
+
+  .service-box {
+    min-height: 0;
+  }
+
+  .service-content {
+    padding-top: 22px;
+  }
+
+}
